@@ -302,7 +302,6 @@ spyder-kernels==2.4.4
 SQLAlchemy==1.4.39
 sqlparse==0.5.1
 stack-data==0.2.0
-statsmodels==0.14.0
 sympy==1.13.1
 tables==3.8.0
 tabulate==0.8.10
