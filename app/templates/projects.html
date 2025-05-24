@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+        body {
+            background-color: black;
+            padding: 20px;
+            font-family: Arial;
+        }
+
+        .main {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 50px;
+            word-break: break-all;
+            color: black;
+        }
+
+        h3 {
+            color: black;
+        }
+
+        p {
+            color: black;
+        }
+
+        .row {
+            margin: 8px -16px;
+        }
+
+        .row,
+        .row > .column {
+            padding: 8px;
+        }
+
+        .column {
+            float: left;
+            width: 25%;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .content {
+            background-color: white;
+            padding: 10px;
+            height: 620px;
+            flex: 1;
+        }
+
+
+        @media screen and (max-width: 900px) {
+            .column {
+                width: 50%;
+            }
+        }
+
+        @media screen and (max-width: 600px){
+            .column {
+                width: 100%;
+            }
+        }
+    </style>
+    <body>
+        <div>Nick portfolio: 
+            <a href="{{url_for('index')}}">Home | </a>
+            <a href="{{url_for('projects')}}">Projects</a>
+        </div>
+
+        <div class="main">
+            <h1 style="color: aliceblue;">My Projects</h1>
+            <hr>
+
+            <div class="row">
+                <div class="column" >
+                    <div class="content">
+                        <img src="{{ town_square_img }}" alt="My_Town_Square_Bank" style="width:100%; height: 230px;">
+                        <h3>Town Square Bank</h3>
+                        <p>A banking website themed around the wild west. I used Django, html, css, and javascript to create the website. The project is inspired on the Chase banking website.</p>
+                        <a href="https://github.com/NickGacharich/My_Town_Square_Bank" style="position: absolute; bottom: 0;">Github Link!</a>
+                    </div>
+                </div>
+                <div class="column" >
+                    <div class="content">
+                        <img src="{{ pokemon_img }}" alt="Pokemon Webcrwaler" style="width:100%">
+                        <h3>Pokemon card Webcrawler </h3>
+                        <p>I created a webcrawler for a friend who was having difficulty getting pokemon cards that were in high demand. It goes to target and attemps to purchase the Pokemon Scarlet and Violet Pokemon card pack. It was made using python with the selenium library to automate the purchases.</p>
+                        <a href="https://github.com/NickGacharich/Pokemon_webcrawler" style="position: absolute; bottom: 0;">Github Link!</a>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <img src="{{ anime_generator_img }}" alt="Anime_Generator" style="width:100%; height: 230px;">
+                        <h3>Anime Character Generator</h3>
+                        <p>In this project I created a DCGAN model to generate fake images from real images. In this model I used animation characters as input in order to create fake animated characters. The project was made in Jupyter Notebook with the torch, numpy, and matplotlib library for creating the model and ploting the performance of the model.</p>
+                        <a href="https://github.com/NickGacharich/Anime-Generator" style="position: absolute; bottom: 0;">Github Link!</a>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+    </body>
+</html>

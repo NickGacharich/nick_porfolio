@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/globe.gl"></script>
+    <head>
+        {% if title %}
+        <title>{{ title }} - Nick portfolio</title>
+        {% else %}
+        <title> Welcome to Nick!</title>
+        {% endif %}
+    </head>
+    <style>
+        /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+        .row.content {height: 1600px}
+        
+        /* Set gray background color and 100% height */
+        .sidenav {
+        background-color: #2e2c2c;
+        height: 100%;
+        }
+
+        .col-sm-9 {
+            background: url('/static/nick_photo/sky.jpg');
+            animation: sky 205s linear alternate;
+            
+        }
+
+
+        @keyframes sky{
+            0%{ background-position: 0 0 }
+            100%{ background-position: 0 100%; }
+        }
+
+
+        .p {
+            color: white;
+        }
+
+        .strong {
+            border: 5px;
+            border-style: solid;
+            color: white;
+        }
+
+
+        @keyframes scan {
+            from {left:15px; top:20px}
+            to {left:15px; top:300px}
+            
+        }
+
+        @media screen and (max-width: 767px) {
+        .sidenav {
+            height: auto;
+            padding: 15px;
+        }
+        .row.content {height: auto;} 
+        }
+    </style>
+    <body>
+        <div>Nick portfolio: 
+            <a href="/">Home | </a>
+            <a href="/projects">Projects</a>
+        </div>
+        <div class="container-fluid">
+            <div class="row content">
+                <div class="col-sm-3 sidenav">
+                    <h4  style="color: aliceblue;">Nicholas Gacharich</h4>
+                    <div style="width: 250px; height: 10px; background-image: linear-gradient(to bottom, #0000FF, #62cff4, #FFFFFF); position: absolute; z-index: 2;animation: scan 2s infinite; animation-timing-function: linear;"></div>
+                    <img src="{{ user_image }}" width="250px" height="300px" style="padding-bottom: 25px; filter: grayscale(100%) contrast(120%) brightness(80%);position: relative;" alt="User Image">
+                    <p style="color: white;">Sex: <strong style="border: 5px solid greenyellow;">male</strong></p>
+                    <p  style="color: white;">Height: <strong style="border: 5px solid greenyellow;">5'11</strong></p>
+                    <p  style="color: white;">D.O.B: <strong style="border: 5px solid greenyellow;">01/31/96</strong> </p>
+                    <p  style="color: white;">P.O.B: <strong style="border: 5px solid greenyellow;">FL</strong></p>
+                    <p  style="color: white;">Eye Color: <strong style="border: 5px solid greenyellow;">Brown</strong></p>
+                    <p  style="color: white;">Hair Color: <strong style="border: 5px solid greenyellow;">Brown</strong></p>
+                    <p  style="color: white;">Favorite Color: <strong style="border: 5px solid greenyellow;">Blue</strong></p>
+                    <p  style="text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px crimson, 0 0 30px crimson, 0 0 40px crimson, 0 0 55px crimson, 0 0 70px crimson;"><strong>CLEARANCE</strong>
+                </div>
+                <div class="col-sm-9" style="background: url('/static/nick_photo/Map Animation.gif'); background-size: cover; height: 100%;">
+                    {% block content %}{% endblock %}
+                    
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>

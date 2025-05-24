@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block content %}
+        <style>
+                h1, h3, h4, li, p{
+                        color: aliceblue;
+                }
+
+                .typewriter h1, h3, li {
+                        overflow: hidden;
+                        border-right: .15em solid orange;
+                        white-space: nowrap;
+                        margin: 0 auto;
+                        letter-spacing: .15em;
+                        animation: 
+                                typing 3.5s steps(17, end),
+                                blink-caret .75s step-end infinite;
+                }
+
+                
+                .typewriter p {
+                        overflow: hidden;
+                        border-right: .15em solid orange;
+                        white-space: wrap;
+                        margin: 0 auto;
+                        letter-spacing: .15em;
+                        animation: 
+                                typing 3.5s steps(159, end),
+                                blink-caret .75s step-end infinite;
+                }
+
+                @keyframes typing {
+                        from {width: 0}
+                        to {width: 100%}
+                }
+
+                @keyframes blink-caret {
+                        from, to {border-color: transparent}
+                        50% {border-color: orange;}
+                }
+        </style>
+        <div class="typewriter">
+                <h1>Hello, I am {{ user.username }}!</h1>
+                <br>
+                <h3>About Me</h3>
+                <p>My name is Nick Gacharich, born and raised in Orlando, FL. Growing up I was always a curious person who would try new things and explore new topics. In High School I joined our school's marching band, jazz band, and wind symphony, but I also played in our school's lacrosse team because of my inquisitive personality. I went to college at Florida Atlantic University (GO OWLS) and majored in Computer Science eventually receiving my Bachelors in Computer Science. I then pursued my Masters in Computer Science at the same university and graudated with a thesis paper. I worked at GM for about 2 years working mostly on the EV Home Charging Program. We used the Snowflake cloud platform to stored charging data on all users and SQL to retrieve the data. My job was to retrieve and tell a story about the data using charts in PowerBI. I am now looking to expand my knowledge and work with different languages so I can grow as programmer.</p>
+                <br>
+                <hr>
+                <br>
+                <h3>Career Objective: </h3>
+                <p>My career goal is to eventually work with AI and create ML models. It is a field I studied in college and I am interested in contributing in this industry.</p>
+                <br>
+                <hr>
+                <br>
+                <h3>My Hobbies: </h3>
+                {% for hobby in hobbies %}
+                <div><li>{{ hobby.topic.hobby }}</li></div>
+                {% endfor %}
+                <br>
+                <hr>
+                <br>
+                <h3>Skills: </h3>
+                {% for skill in skills %}
+                <div><li>{{ skill.skill.language }}</li></div>
+                {% endfor %}
+                <br>
+                <hr>
+                <br>
+                <h3>Education: </h3>
+                <h4>Degree- Bachelor of Science</h4>
+                <h4>Major- Computer Science</h4>
+                <h4>Date of Graduation- 08/10/2018</h4>
+                <br>
+                <h4>Degree- Master of Science</h4>
+                <h4>Major- Computer Science</h4>
+                <h4>Date of Graduation- 04/20/2021</h4>
+                <br>
+        </div>
+{% endblock %}
