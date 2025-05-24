@@ -256,7 +256,6 @@ python-snappy==0.6.1
 pytoolconfig==1.2.5
 pytz==2023.3.post1
 pyviz-comms==2.3.0
-pyzmq==23.2.0
 QDarkStyle==3.0.2
 qstylizer==0.2.2
 QtAwesome==1.2.2
